@@ -46,8 +46,14 @@ class WeatherView extends StatelessWidget {
       child: ListTile(
         title: Text((_weatherViewModel.weather?.location?.country) ?? "-"),
         subtitle: Text(_weatherViewModel.weather?.location?.name ?? "-"),
-        leading:
+        leading: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
             Text(_weatherViewModel.weather?.current?.tempC.toString() ?? "-"),
+            Text(" \u2103"),
+          ],
+        ),
         trailing: Text(_weatherViewModel.weather?.location?.localtime ?? "-"),
       ),
     );
